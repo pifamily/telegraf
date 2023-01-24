@@ -1,0 +1,15 @@
+---
+# defaults file for telegraf
+telegraf_image: 'telegraf:1.25'
+
+telegraf_namespace: influx
+
+telegraf_manifests : [{
+  src: telegraf_deployment.j2.yaml,
+  dest: telegraf_deployment.yaml
+},{
+  src: telegraf_config.j2.yaml,
+  dest: telegraf_config.yaml
+}]
+
+INFLUXDB_DB: brewery
